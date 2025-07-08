@@ -1,0 +1,40 @@
+{
+  "name": "@gnews-io/gnews-io-js",
+  "version": "1.0.0",
+  "description": "JavaScript client for GNews API",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "README.md",
+    "dist/**"
+  ],
+  "scripts": {
+    "build": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gnews-io/gnews-io-js"
+  },
+  "keywords": [
+    "gnews",
+    "news",
+    "api",
+    "client",
+    "javascript",
+    "typescript",
+    "gnews.io"
+  ],
+  "author": "gnews-io",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gnews-io/gnews-io-js/issues"
+  },
+  "homepage": "https://github.com/gnews-io/gnews-io-js#readme",
+  "devDependencies": {
+    "@types/node": "^22.13.10",
+    "typescript": "^5.8.2"
+  },
+  "dependencies": {
+    "undici-types": "^6.20.0"
+  }
+}
