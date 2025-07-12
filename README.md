@@ -36,7 +36,7 @@ const client = new GNews('YOUR_API_KEY');
 
 ```javascript
 // Get top headlines
-client.top_headlines({
+client.topHeadlines({
   lang: 'en',            // optional, article language
   country: 'us',         // optional, article country
   max: 10,               // optional, number of articles to return
