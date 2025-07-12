@@ -29,14 +29,14 @@ const GNews = require('@gnews-io/gnews-io-js');
 ### Initialize
 
 ```javascript
-const gnews = new GNews('YOUR_API_KEY');
+const client = new GNews('YOUR_API_KEY');
 ```
 
-### Get Headlines
+### Get Top Headlines
 
 ```javascript
 // Get top headlines
-gnews.headlines({
+client.top_headlines({
   lang: 'en',            // optional, article language
   country: 'us',         // optional, article country
   max: 10,               // optional, number of articles to return
@@ -55,7 +55,7 @@ gnews.headlines({
 
 ```javascript
 // Search for articles
-gnews.search('bitcoin', {
+client.search('bitcoin', {
   lang: 'en',         // optional, article language
   country: 'us',      // optional, article country
   max: 10,            // optional, number of articles to return

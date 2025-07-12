@@ -101,7 +101,7 @@ class GNews {
    * @param {string} params.expand - (paid subscription) Expand articles content
    * @returns {Promise<Object>} - Promise resolving to headlines response
    */
-  async headlines(params: {
+  async top_headlines(params: {
     lang?: string;
     country?: string;
     max?: number;
