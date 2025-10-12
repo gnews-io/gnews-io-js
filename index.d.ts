@@ -1,7 +1,7 @@
 declare class GNews {
   /**
    * Creates a new GNews client
-   * @param apiKey - Your GNews.io API key
+   * @param apiKey - Your GNews API key
    * @param options - Additional configuration options
    */
   constructor(

@@ -1,10 +1,10 @@
-# GNews.io JS Client
+# GNews API JavaScript Client
 
-A simple JavaScript wrapper for the [GNews.io](https://gnews.io) API. This library provides a clean interface for fetching news articles.
+A simple JavaScript wrapper for [GNews API](https://gnews.io). This library provides a clean interface for fetching news articles.
 
 ## Documentation
 
-- [GNews.io API Documentation](https://gnews.io/docs/v4#introduction)
+- [GNews API Documentation](https://docs.gnews.io/)
 
 ## Installation
 
@@ -26,21 +26,23 @@ import GNews from '@gnews-io/gnews-io-js';
 const GNews = require('@gnews-io/gnews-io-js');
 ```
 
-### Initialize
+### Initialization
 
 ```javascript
 const client = new GNews('YOUR_API_KEY');
 ```
 
-### Get Top Headlines
+### Search Endpoint
 
 ```javascript
-// Get top headlines
-client.topHeadlines({
-  lang: 'en',            // optional, article language
-  country: 'us',         // optional, article country
-  max: 10,               // optional, number of articles to return
-  category: 'technology' // optional, article category
+// Search for articles
+client.search('bitcoin', {
+  lang: 'en',                   // Optional, languages of articles 
+  country: 'us',                // Optional, country of origin of the source
+  max: 10,                      // Optional, maximum number of articles to be returned
+  from: '2025-01-01T00:00:00Z', // Optional, minimum publication date (included)
+  to: '2025-12-31T23:59:59Z',   // Optional, maximum publication date (included)
+  // ..., any additional parameter specified in the documentation (see https://docs.gnews.io)
 })
 .then(response => {
   console.log(`Found ${response.totalArticles} articles`);
@@ -51,18 +53,16 @@ client.topHeadlines({
 });
 ```
 
-### Search Articles
+### Top Headlines Endpoint
 
 ```javascript
-// Search for articles
-client.search('bitcoin', {
-  lang: 'en',         // optional, article language
-  country: 'us',      // optional, article country
-  max: 10,            // optional, number of articles to return
-  in: 'title',        // optional, search in title, description, content
-  from: '2025-01-01', // optional, start date
-  to: '2025-12-31',   // optional, end date
-  sortby: 'relevance' // optional, sort by relevance, date, or publish-time
+// Get the top headlines
+client.topHeadlines({
+  category: 'technology'        // Optional, desired category
+  lang: 'en',                   // Optional, languages of articles
+  country: 'us',                // Optional, country of origin of the source
+  max: 10,                      // Optional, maximum number of articles to be returned
+  // ..., any additional parameter specified in the documentation (see https://docs.gnews.io)
 })
 .then(response => {
   console.log(`Found ${response.totalArticles} articles`);
@@ -79,21 +79,24 @@ All API methods return promises that resolve to objects with the following struc
 
 ```javascript
 {
-  totalArticles: 123,
-  articles: [
+  "totalArticles": 54904,
+  "articles": [
     {
-      title: "Article title",
-      description: "Article description",
-      content: "Article content...",
-      url: "https://article-source.com/article",
-      image: "https://article-source.com/image.jpg",
-      publishedAt: "2025-01-01T12:00:00Z",
-      source: {
-        name: "Source Name",
-        url: "https://source-website.com"
+      "id": "b961dade95c55b7f949ccd8e0234a356",
+      "title": "M5 chip leak reveals Apple has big gains coming in key area",
+      "description": "Apple’s forthcoming M5 chip has seemingly leaked as part of a new iPad Pro hardware leak. Here’s what its performance looks like in testing.",
+      "content": "Today, Apple’s as-yet-unannounced M5 iPad Pro was seemingly leaked by the same YouTuber who last year leaked the M4 MacBook Pro. Thanks to the surprise reveal, we now have benchmarks for Apple’s forthcoming M5 chip, and they point to big gains coming... [1862 chars]",
+      "url": "https://9to5mac.com/2025/09/30/m5-chip-leak-reveals-apple-has-big-gains-coming-in-key-area/",
+      "image": "https://i0.wp.com/9to5mac.com/wp-content/uploads/sites/6/2024/12/M5-Pro-chip-could-separate-CPU-and-GPU-in-server-grade-chips.jpg?resize=1200%2C628&quality=82&strip=all&ssl=1",
+      "publishedAt": "2025-09-30T19:38:25Z",
+      "lang": "en",
+      "source": {
+        "id": "92f73865e835e33ed68c11447777c939",
+        "name": "9to5Mac",
+        "url": "https://9to5mac.com",
+        "country": "us"
       }
-    },
-    // More articles...
+    }
   ]
 }
 ```

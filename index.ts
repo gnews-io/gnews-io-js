@@ -17,8 +17,8 @@ interface GNewsResponse {
 }
 
 /**
- * GNews.io API Client Library
- * A simple wrapper for the GNews.io API
+ * GNews API Client Library
+ * A simple wrapper for GNews API
  */
 class GNews {
   apiKey: string;
@@ -28,7 +28,7 @@ class GNews {
 
   /**
    * Creates a new GNews client
-   * @param {string} apiKey - Your GNews.io API key
+   * @param {string} apiKey - Your GNews API key
    * @param {Object} options - Additional configuration options
    * @param {string} options.version - API version (default: 'v4')
    * @param {number} options.maxWait - Maximum time to wait for a response in ms (default: 10000)
