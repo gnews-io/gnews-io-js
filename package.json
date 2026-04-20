@@ -30,8 +30,11 @@
     "url": "https://github.com/gnews-io/gnews-io-js/issues"
   },
   "homepage": "https://github.com/gnews-io/gnews-io-js#readme",
+  "engines": {
+    "node": ">=24"
+  },
   "devDependencies": {
-    "@types/node": "^22.13.10",
+    "@types/node": "^24",
     "typescript": "^5.8.2"
   },
   "dependencies": {
