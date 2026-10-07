@@ -22,3 +22,7 @@ Thumbs.db
 
 # Build outputs
 dist/
+
+# Yarn PnP
+.pnp.*
+.yarn/
