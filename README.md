@@ -148,6 +148,8 @@ npm install
 npm test
 ```
 
+Releases: bump `version` in `package.json` and `VERSION` in `index.ts`, update `CHANGELOG.md`, then push a `vX.Y.Z` tag. The workflow stages the package on npm, and a maintainer approves it with 2FA in the Staged Packages tab on npmjs.com.
+
 ## License
 
 MIT
